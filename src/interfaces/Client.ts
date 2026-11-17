@@ -1,2 +1,6 @@
-// Pendiente de implementar en el siguiente seguimiento (interfaz Client)
-export {};
+export interface Client {
+  id?: number;
+  name: string;
+  email: string;
+  phone: string;
+}

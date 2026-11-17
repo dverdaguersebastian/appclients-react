@@ -1,2 +1,8 @@
-// Pendiente de implementar en el siguiente seguimiento (conexión con Supabase)
-export {};
+import { createClient, type SupabaseClient } from '@supabase/supabase-js';
+
+export const supabaseUrl = import.meta.env.VITE_SUPABASE_URL ?? '';
+const supabaseKey = import.meta.env.VITE_SUPABASE_KEY ?? '';
+
+export const isSupabaseConfigured = Boolean(supabaseUrl && supabaseKey);
+
+export const supabase: SupabaseClient | null = isSupabaseConfigured ? createClient(supabaseUrl, supabaseKey) : null;
